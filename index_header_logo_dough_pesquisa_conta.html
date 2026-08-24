@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Dough King Store — Blox Fruits</title>
+<meta content="Dough King Store — sua loja de Blox Fruits." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg: #0b0710;
+  --bg-soft: #140c1e;
+  --card: #17101f;
+  --line: #2c2036;
+  --cream: #fdf6ec;
+  --cream-dim: #b7aec4;
+  --orange: #ae16a8;
+  --orange-deep: #7a0f75;
+  --pink: #e05fd9;
+  --green: #37d67a;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 20px 45px -20px rgba(0,0,0,.6);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*{box-sizing:border-box}
+.icon{width:1em;height:1em;color:var(--orange);flex-shrink:0;vertical-align:-0.15em}
+.icon-brand{width:26px;height:26px}
+.icon-16{width:16px;height:16px}
+.icon-18{width:18px;height:18px}
+.icon-14{width:14px;height:14px}
+.icon-hero{width:150px;height:150px}
+.icon-30{width:30px;height:30px}
+.icon-52{width:52px;height:52px}
+.icon-28{width:28px;height:28px}
+.icon-44{width:44px;height:44px}
+.icon-22{width:22px;height:22px}
+.icon-24{width:24px;height:24px}
+.icon-40{width:40px;height:40px}
+.reviews .user .icon-user{color:var(--orange);width:20px;height:20px}
+.spark .icon{color:var(--pink)}
+.hamb .icon{color:var(--cream)}
+.discord .icon,.checkout-discord .icon{color:#1b120c}
+
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    linear-gradient(rgba(174,22,168,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(174,22,168,.035) 1px, transparent 1px),
+    radial-gradient(1100px 600px at 18% -8%, rgba(174,22,168,.16), transparent 62%),
+    radial-gradient(900px 520px at 92% 8%, rgba(224,95,217,.10), transparent 58%),
+    linear-gradient(135deg, rgba(174,22,168,.035), transparent 45%, rgba(80,20,90,.04)),
+    var(--bg);
+  background-size:48px 48px,48px 48px,auto,auto,auto,auto;
+  color:var(--cream);
+  font-family:var(--font-body);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--font-body);margin:0;color:var(--cream);letter-spacing:.2px}
+p{margin:0;color:var(--cream-dim)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+img{max-width:100%;display:block}
+.section{max-width:1180px;margin:0 auto;padding:90px 24px}
+.heading{max-width:640px;margin-bottom:44px}
+.heading.row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;max-width:none;flex-wrap:wrap}
+.heading small{color:var(--orange);font-weight:700;letter-spacing:2.5px;font-size:12px}
+.heading h2{font-size:clamp(28px,3.5vw,40px);margin:10px 0 12px}
+.heading p{font-size:15.5px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;font-family:var(--font-display);font-size:15px;transition:transform .15s ease, box-shadow .15s ease}
+.btn.primary{background:linear-gradient(135deg,var(--orange),var(--pink));color:#1b120c;box-shadow:0 12px 30px -10px rgba(174,22,168,.55)}
+.btn.primary:hover{transform:translateY(-2px)}
+.btn.ghost{border:2px solid var(--line);color:var(--cream)}
+.btn.ghost:hover{border-color:var(--orange);color:var(--orange)}
+
+/* Header */
+header.top{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  box-sizing:border-box;
+  z-index:50;
+  background:transparent;
+  transition:transform .25s ease, opacity .25s ease;
+  padding:2px 8px 0;
+}
+header.top.header-hidden{transform:translateY(calc(-100% - 12px));opacity:0;pointer-events:none}
+main{padding-top:82px}
+.bar{position:relative;max-width:1288px;height:78px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:22px;background:rgba(15,8,20,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:68px;z-index:3}
+.brand-logo{display:block;width:68px;height:68px;max-width:none;object-fit:contain;border-radius:10px;transition:transform .22s ease,filter .22s ease}.brand:hover .brand-logo{transform:scale(1.04)}
+.footer-logo{width:64px;height:64px;object-fit:contain;border-radius:10px;display:block;margin-bottom:12px;transition:transform .22s ease}.foot-brand:hover .footer-logo{transform:scale(1.04)}
+.brand-mark{font-size:24px}
+.brand b{color:var(--orange)}
+.brand em{font-style:normal;color:var(--cream)}
+.brand small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:3px;color:var(--cream-dim);font-weight:600}
+.search{width:176px;flex:none;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:8px 12px;margin-left:0}
+.search span{color:var(--cream-dim)}
+.search input{width:100%;flex:1;background:none;border:none;color:var(--cream);font-size:14px}
+.search:focus-within{border-color:#4aa8ff;box-shadow:0 0 0 1px rgba(74,168,255,.22)}
+.search input:focus{outline:none}
+.search input::placeholder{color:var(--cream-dim)}
+.search-wrap{position:relative;width:176px;flex:none}
+.search-wrap .search{width:100%;box-sizing:border-box}
+.search-results{position:absolute;top:calc(100% + 9px);left:0;width:400px;max-height:398px;overflow-y:auto;background:#171a20;border:1px solid rgba(255,255,255,.10);border-radius:0 0 16px 16px;box-shadow:0 18px 45px rgba(0,0,0,.42);z-index:500;display:none}
+.search-results.show{display:block}
+.search-result{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.09);cursor:pointer;transition:background .16s ease}
+.search-result:last-child{border-bottom:none}
+.search-result:hover{background:rgba(174,22,168,.13)}
+.search-thumb{width:58px;height:58px;border-radius:10px;overflow:hidden;flex:none;background:#0e0b13;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+.search-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.search-result-info{min-width:0;flex:1}
+.search-result-title{color:#fff;font-size:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.search-result-meta{display:inline-flex;margin-top:6px;padding:3px 7px;border:1px solid #c43cff;border-radius:6px;color:#fff;font-size:11px;font-weight:800}
+.search-empty{padding:22px 18px;color:#aaa;text-align:center;font-size:14px}
+@media(max-width:700px){.search-wrap{width:42px}.search-wrap .search{width:42px}.search-results{left:-70px;width:min(360px,calc(100vw - 28px))}}
+nav{display:flex;gap:24px;margin-left:auto;align-items:center}
+nav a{font-size:14px;font-weight:600;color:var(--cream-dim)}
+nav a:hover{color:var(--orange)}
+.cart-btn{position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;gap:0;background:rgba(174,22,168,.08);border:1px solid rgba(174,22,168,.55);padding:0;border-radius:12px;font-weight:700;font-size:0}
+.cart-btn svg{width:19px;height:19px;flex-shrink:0}
+.cart-btn:hover{border-color:var(--orange);background:rgba(174,22,168,.15)}
+.cart-btn span{position:absolute;top:-6px;right:-6px;background:var(--orange);color:#1b120c;font-size:10px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.discord{background:#fff;color:#171017;padding:11px 18px;border-radius:12px;font-weight:800;font-size:14px}
+.hamb{display:flex;align-items:center;justify-content:center;width:42px;height:42px;background:transparent;border:0;border-radius:10px;padding:0;color:var(--cream);order:-2;cursor:pointer;transition:background .2s ease,transform .2s ease}.hamb:hover{background:rgba(255,255,255,.06)}.hamb:active{transform:scale(.92)}.hamb-lines{width:20px;height:16px;position:relative;display:block}.hamb-lines span{position:absolute;left:0;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .22s ease,opacity .18s ease,top .22s ease}.hamb-lines span:nth-child(1){top:1px}.hamb-lines span:nth-child(2){top:7px}.hamb-lines span:nth-child(3){top:13px}.hamb.active .hamb-lines span:nth-child(1){top:7px;transform:rotate(45deg)}.hamb.active .hamb-lines span:nth-child(2){opacity:0;transform:scaleX(0)}.hamb.active .hamb-lines span:nth-child(3){top:7px;transform:rotate(-45deg)}
+.mobile-nav{display:flex;flex-direction:column;padding:0 24px;max-height:0;overflow:hidden;opacity:0;transform:translateY(-8px);border-top:1px solid transparent;transition:max-height .25s ease,opacity .2s ease,transform .25s ease,padding .25s ease,border-color .25s ease}.mobile-nav.show{max-height:320px;opacity:1;transform:translateY(0);padding:10px 24px 18px;border-top-color:var(--line)}
+.mobile-nav a{padding:10px 0;border-bottom:1px solid var(--line);font-weight:600;color:var(--cream-dim)}
+@media(max-width:900px){
+  main{padding-top:74px}
+  .bar{height:70px;padding:0 12px}
+  .brand,.brand-logo{width:58px;height:58px}
+  nav{display:none}
+  .search-wrap{width:min(210px,42vw)}
+  .search-wrap .search{width:100%}
+  .discord{display:none}
+  .hamb{display:flex}
+}
+@media(max-width:520px){
+  .search-wrap{width:42px}
+  .search-wrap .search{width:42px;height:42px;padding:0;justify-content:center}
+  .search-wrap .search input{display:none}
+  .brand,.brand-logo{width:52px;height:52px}
+}
+
+/* Hero */
+.hero{max-width:1240px;margin:0 auto;padding:80px 24px 60px;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+.online{display:inline-flex;align-items:center;gap:8px;background:var(--bg-soft);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--green);margin-bottom:20px}
+.online i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(55,214,122,.2)}
+.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.08}
+.hero h1 span{background:linear-gradient(135deg,var(--orange),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-left p{margin:20px 0 30px;font-size:16.5px;max-width:480px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.mini-stats{display:flex;gap:34px;margin-top:42px}
+.mini-stats strong{display:block;font-family:var(--font-display);font-size:22px;color:var(--orange)}
+.mini-stats small{color:var(--cream-dim);font-size:12.5px;font-weight:600}
+.hero-right{display:none}
+.ring{position:absolute;width:300px;height:300px;border-radius:50%;background:conic-gradient(from 90deg,var(--orange),var(--pink),var(--orange-deep),var(--orange));filter:blur(2px);animation:spin 14s linear infinite;opacity:.35}
+.hero-fruit{position:relative;font-size:150px;filter:drop-shadow(0 20px 40px rgba(174,22,168,.45));animation:float 4.5s ease-in-out infinite}
+.spark{position:absolute;color:var(--orange);font-size:22px;animation:twinkle 2.4s ease-in-out infinite}
+.s1{top:15%;left:10%}.s2{bottom:20%;right:8%;animation-delay:.6s;color:var(--pink)}.s3{top:55%;left:0;animation-delay:1.2s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
+
+/* Community strip */
+.community{max-width:1180px;margin:0 auto;padding:0 24px 90px;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:16px}
+.community>div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px}
+.community strong{display:block;font-family:var(--font-display);font-size:26px;color:var(--orange)}
+.community small{color:var(--cream-dim);font-size:12.5px;font-weight:600}
+.community>div:first-child b{display:block;font-size:15px;margin-bottom:4px}
+.community>div:first-child span{font-size:12.5px;color:var(--cream-dim)}
+
+/* Categories */
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.category{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .15s ease, border-color .15s ease}
+.category:hover{transform:translateY(-4px);border-color:var(--orange)}
+.category span{font-size:30px}
+.category h3{font-size:17px;margin-bottom:4px}
+.category p{font-size:13.5px}
+.category b{margin-left:auto;color:var(--orange);font-size:18px}
+
+/* Filters + products */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{background:var(--card);border:1px solid var(--line);padding:9px 18px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--cream-dim)}
+.filter.active,.filter:hover{background:var(--orange);color:#1b120c;border-color:var(--orange)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:0;text-align:left;overflow:hidden;transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease}
+.card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:var(--shadow)}
+.delivery-badge{display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#22c55e,#15803d);color:#052e12;font-weight:800;font-size:10.5px;letter-spacing:.4px;padding:7px 10px}
+.delivery-badge .icon{width:12px;height:12px;color:#052e12}
+.card-media{position:relative;margin:14px 14px 0;aspect-ratio:1/1;background:radial-gradient(circle at 50% 40%,rgba(174,22,168,.18),transparent 70%),var(--bg-soft);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.product-photo{width:100%;height:100%}
+.product-photo img{width:100%;height:100%;object-fit:contain}
+.product-art{font-size:52px;margin:0}
+/* New product galleries */
+.v4-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;width:100%;height:100%;padding:10px;box-sizing:border-box;background:radial-gradient(circle at 50% 40%,rgba(174,22,168,.18),transparent 70%)}
+.v4-gallery img{width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;border-radius:10px;background:rgba(11,7,16,.28);border:1px solid rgba(255,255,255,.08)}
+
+.tags{position:absolute;left:8px;bottom:8px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{background:rgba(11,7,16,.72);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);color:var(--cream);font-size:9.5px;font-weight:800;letter-spacing:.3px;padding:4px 9px;border-radius:7px}
+.card-body{padding:16px 18px 18px}
+.card-body small{color:var(--orange);font-weight:800;font-size:11px;letter-spacing:1.5px}
+.card-body h3{font-size:19px;margin:6px 0 6px;display:flex;align-items:center;gap:7px}
+.card-body p{font-size:13px;min-height:36px}
+.card-body .price-row{display:flex;align-items:center;gap:8px;margin:12px 0 14px}
+.card-body .price{font-family:var(--font-display);font-weight:900;font-size:23px;color:var(--cream);letter-spacing:-.3px}
+.pix-badge{display:flex;align-items:center;justify-content:center;width:27px;height:27px;background:#0b0710;border:1.5px solid #00bdae;border-radius:7px;flex-shrink:0;overflow:hidden}
+/* Product ratings and promotional pricing */
+.rating-box{display:flex;align-items:center;gap:7px;margin-top:10px;font-size:13px;color:var(--cream-dim);font-weight:600}
+.rating-box .stars{display:inline-flex;align-items:center;gap:1px;line-height:1}.rating-box .stars .star{font-size:17px;line-height:1;color:#5d5863}.rating-box .stars .star.full{color:#f6c945}.rating-box .stars .star.half{background:linear-gradient(90deg,#f6c945 50%,#5d5863 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rating-box .rating-number{color:var(--cream);font-weight:800}
+.rating-box .rating-count{color:var(--cream-dim);font-weight:500}
+.promo-prices{display:flex;align-items:center;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
+.old-price{font-size:14px;color:#8f8996;text-decoration:line-through;text-decoration-thickness:1.5px}
+.discount-badge{background:#123d35;color:#22d3a5;border:1px solid #1b8f78;border-radius:5px;padding:3px 7px;font-size:10.5px;font-weight:800;white-space:nowrap}
+.current-price-row{display:flex;align-items:center;gap:9px;margin:0 0 8px}.current-price{font-family:var(--font-display);font-weight:900;font-size:23px;color:var(--cream);letter-spacing:-.3px;margin:0}
+.price-row{display:block!important}
+.price-row .pix-badge{position:static}
+.pix-badge svg{width:15px;height:15px;display:block}
+
+.pix-badge img{width:18px;height:18px;display:block;object-fit:contain}
+.buy-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#1b120c;border:none;padding:13px;border-radius:var(--radius-sm);font-weight:800;font-size:14px;transition:filter .15s ease}
+.buy-btn:hover{filter:brightness(1.08)}
+.buy-btn .icon{width:16px;height:16px;color:#1b120c}
+
+/* Why */
+.why{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{max-width:1180px;margin:0 auto;padding:0 24px 90px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why-grid>div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.why-grid span{font-size:28px;display:block;margin-bottom:12px}
+.why-grid h3{font-size:16px;margin-bottom:8px}
+.why-grid p{font-size:13.5px}
+
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.reviews article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.reviews .user{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:14px}
+.reviews .user span{margin-left:auto;color:var(--orange);letter-spacing:1px}
+.reviews p{font-size:14.5px;color:var(--cream)}
+.reviews-marquee{overflow:hidden;position:relative;margin-top:4px;mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
+.reviews-track{display:flex;width:max-content;gap:18px;animation:reviewsSlide 32s linear infinite;will-change:transform}
+.review-card{width:330px;flex:0 0 330px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-sizing:border-box}
+.review-card .user{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:14px}
+.review-card .user span{margin-left:auto;color:var(--orange);letter-spacing:1px;white-space:nowrap}
+.review-card p{font-size:14.5px;color:var(--cream);line-height:1.55;margin:0}
+@keyframes reviewsSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.reviews-marquee:hover .reviews-track{animation-play-state:paused}
+.dough-banner img{width:100%;height:100%;object-fit:contain}
+@media (prefers-reduced-motion:reduce){.reviews-track{animation:none}}
+
+
+/* TERMOS */
+.terms{display:none;position:fixed;inset:0;z-index:9999;overflow-y:auto;max-width:none;margin:0;padding:110px 18px 50px;background:rgba(5,3,8,.94);backdrop-filter:blur(10px)}
+.terms.is-open{display:block}
+.terms-close{position:fixed;top:24px;right:28px;z-index:10001;width:42px;height:42px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(20,10,25,.9);color:#fff;font-size:25px;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.terms-close:hover{transform:scale(1.05);border-color:rgba(208,0,255,.6)}
+.terms-head{text-align:center;margin-bottom:24px}.terms-head h2{margin:0 0 8px;font-size:30px}.terms-head p{margin:0;color:var(--muted)}
+.terms-grid{display:grid;gap:18px}.terms-card{background:rgba(20,10,25,.78);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:24px;box-shadow:0 12px 35px rgba(0,0,0,.18)}
+.terms-card h3{margin:0 0 14px;font-size:19px}.terms-card p{margin:0;color:#b9b3bd;line-height:1.7}.terms-card ul{margin:12px 0 0;padding-left:20px;color:#b9b3bd;line-height:1.75}.terms-card strong{color:#fff}.terms-warning{border-color:rgba(255,80,100,.28);background:rgba(65,18,27,.42)}.terms-warning h3{color:#ff737f}
+.terms-discord{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding:18px 20px;border-radius:14px;background:linear-gradient(135deg,rgba(116,65,255,.18),rgba(208,0,255,.12));border:1px solid rgba(168,84,255,.28)}
+.terms-discord p{margin:0}.terms-discord a{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+@media(max-width:700px){.terms{padding-inline:12px}.terms-card{padding:19px}.terms-discord{align-items:flex-start;flex-direction:column}.terms-discord a{width:100%;justify-content:center}}
+
+/* FAQ */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 22px;margin-bottom:12px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary b{color:var(--orange);font-size:20px;font-weight:800}
+.faq details[open] summary b{transform:rotate(45deg)}
+.faq summary b{transition:transform .15s ease;display:inline-block}
+.faq p{margin-top:14px;font-size:14px}
+
+/* CTA */
+.cta{max-width:1180px;margin:0 auto 90px;background:linear-gradient(135deg,rgba(174,22,168,.18),rgba(224,95,217,.14));border:1px solid var(--line);border-radius:var(--radius);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta>div:first-child{display:flex;align-items:center;gap:18px}
+.cta span{font-size:44px}
+.cta h2{font-size:24px;margin-bottom:6px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:60px 24px 30px}
+footer{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+.foot-brand{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:17px}
+.foot-brand span{font-size:22px}
+.foot-brand em{font-style:normal;color:var(--orange)}
+.foot-brand small{display:block;font-size:9px;letter-spacing:2px;color:var(--cream-dim)}
+footer h4{font-size:13px;color:var(--cream-dim);letter-spacing:1px;margin-bottom:14px;font-family:var(--font-body);font-weight:700}
+footer a,footer p{display:block;font-size:13.5px;color:var(--cream-dim);margin-bottom:9px}
+footer a:hover{color:var(--orange)}
+.legal{grid-column:1 / -1;border-top:1px solid var(--line);margin-top:20px;padding-top:20px;font-size:12px;color:var(--cream-dim)}
+.legal small{display:block;margin-top:6px}
+
+/* Cart drawer */
+.cart{position:fixed;top:0;right:-100vw;width:100vw;max-width:none;height:100%;background:var(--bg-soft);border-left:1px solid var(--line);z-index:200;display:flex;flex-direction:column;transition:right .25s ease;box-shadow:-30px 0 60px rgba(0,0,0,.4)}
+.cart.open{right:0}
+.cart-head{display:flex;justify-content:space-between;align-items:flex-start;padding:28px clamp(24px,5vw,70px);border-bottom:1px solid var(--line)}
+.cart-head small{color:var(--orange);font-weight:700;font-size:11px;letter-spacing:1.5px}
+.cart-head h2{font-size:20px;margin-top:4px}
+.cart-head button{font-size:22px;color:var(--cream-dim)}
+.cart-items{flex:1;overflow-y:auto;padding:24px clamp(24px,5vw,70px)}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cart-icon{width:44px;height:44px;border-radius:12px;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.cart-info{flex:1}
+.cart-info b{display:block;font-size:14.5px}
+.cart-info small{color:var(--cream-dim);font-size:12px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty button{width:24px;height:24px;background:var(--card);border:1px solid var(--line);border-radius:6px;font-weight:800}
+.qty span{font-weight:700;font-size:13.5px;min-width:16px;text-align:center}
+.qty .trash{margin-left:auto;color:#ff6b6b;font-size:12px;font-weight:700;background:none;border:none;width:auto}
+.cart-empty{padding:40px 24px;text-align:center;color:var(--cream-dim);font-size:14px;display:none}
+.cart-empty a{color:var(--orange);font-weight:700;display:inline-block;margin-top:10px}
+.cart-bottom{padding:24px clamp(24px,5vw,70px);border-top:1px solid var(--line)}
+.total{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:15px}
+.total strong{font-family:var(--font-display);font-size:22px;color:var(--orange)}
+.checkout-btn{width:100%;background:linear-gradient(135deg,var(--orange),var(--pink));color:#1b120c;padding:14px;border-radius:var(--radius-sm);font-weight:800;font-size:14.5px}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:190;display:none}
+.cart-overlay.show{display:block}
+
+/* Checkout modal */
+.checkout{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:220;display:none;align-items:center;justify-content:center;padding:20px}
+.checkout.show{display:flex}
+.checkout-box{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);max-width:440px;width:100%;padding:30px;position:relative}
+.close-check{position:absolute;top:18px;right:18px;font-size:20px;color:var(--cream-dim)}
+.checkout-title small{color:var(--orange);font-weight:700;font-size:11px;letter-spacing:1.5px}
+.checkout-title h2{font-size:22px;margin:4px 0 6px}
+.checkout-title p{font-size:13.5px;margin-bottom:20px}
+.summary-line{display:flex;justify-content:space-between;font-size:14px;padding:10px 0;border-bottom:1px solid var(--line)}
+.checkout-total{display:flex;justify-content:space-between;align-items:center;margin:18px 0;font-size:15px}
+.checkout-total strong{font-family:var(--font-display);font-size:22px;color:var(--orange)}
+.checkout-note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px;font-size:12.5px;color:var(--cream-dim);margin-bottom:18px}
+.checkout-discord{width:100%;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#1b120c;padding:14px;border-radius:var(--radius-sm);font-weight:800;font-size:14.5px}
+
+/* Buy modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:220;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-box{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);max-width:380px;width:100%;padding:34px;text-align:center;position:relative}
+.modal-box .close{position:absolute;top:16px;right:18px;font-size:20px;color:var(--cream-dim)}
+.modal-icon{font-size:40px;margin-bottom:14px}
+.modal-box h2{font-size:20px;margin-bottom:10px}
+.modal-box p{font-size:13.5px;margin-bottom:22px}
+
+
+/* Product detail view */
+.product-detail-modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);z-index:300;display:none;align-items:flex-start;justify-content:center;padding:28px 18px;overflow:auto}
+.product-detail-modal.show{display:flex}
+.product-detail-modal.show .product-detail-box{animation:detailZoomIn .22s ease-out both}
+@keyframes detailZoomIn{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+.product-detail-box{width:min(1080px,100%);background:linear-gradient(180deg,#140b1b,#0b0710);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.7);position:relative;overflow:hidden}
+.product-detail-close{position:absolute;right:18px;top:14px;width:40px;height:40px;border-radius:50%;background:rgba(11,7,16,.75);border:1px solid var(--line);color:var(--cream);font-size:25px;z-index:3;cursor:pointer}
+.product-detail-top{display:grid;grid-template-columns:minmax(320px,1fr) minmax(320px,.9fr);gap:0}
+.product-detail-media{min-height:480px;background:radial-gradient(circle at 50% 45%,rgba(174,22,168,.22),transparent 68%),#0e0914;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:30px}
+.product-detail-media img{width:100%;height:100%;max-height:520px;object-fit:contain;border-radius:16px}
+.product-detail-info{padding:42px 34px 30px}
+.product-detail-kicker{color:var(--orange);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:8px}
+.product-detail-info h2{font-size:clamp(28px,4vw,42px);margin:0 0 10px}
+.detail-rating{display:flex;align-items:center;gap:8px;margin:0 0 22px;color:var(--cream-dim);font-size:14px}
+.detail-stars{display:inline-flex;align-items:center;gap:2px;font-size:18px;line-height:1;color:#ffd21c}.detail-stars .detail-star{display:inline-block;font-family:Arial,sans-serif;font-size:18px;line-height:1;color:#ffd21c}.detail-stars .detail-star.half{background:linear-gradient(90deg,#ffd21c 50%,#5d5863 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.detail-section{border:1px solid var(--line);background:rgba(23,16,31,.7);border-radius:16px;padding:18px;margin-top:14px}
+.detail-section h3{font-size:16px;margin-bottom:12px}
+.detail-list{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.detail-list li{color:var(--cream-dim);font-size:14px;display:flex;gap:9px;align-items:flex-start}
+.detail-list li::before{content:'✓';color:var(--green);font-weight:900}
+.detail-price-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.detail-old-price{text-decoration:line-through;color:#777;font-size:14px}
+.detail-off{border:1px solid rgba(55,214,122,.35);color:var(--green);background:rgba(55,214,122,.08);border-radius:7px;padding:3px 7px;font-size:11px;font-weight:800}
+.detail-price{font-size:29px;font-weight:900;color:var(--cream);margin-top:5px}
+.detail-buy{width:100%;margin-top:18px}
+.similar-wrap{border-top:1px solid var(--line);padding:28px 30px 34px}
+.similar-wrap h3{font-size:21px;margin-bottom:16px}
+.similar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.similar-grid .card{transform:none!important;box-shadow:none!important}
+.similar-grid .card .card-media{margin:10px 10px 0}
+.similar-grid .card .card-body{padding:12px 13px 14px}
+.similar-grid .card .rating-box{margin-top:5px}
+.similar-grid .card .promo-prices{margin-top:5px}
+.similar-grid .card .current-price-row{margin-bottom:5px}
+@media(max-width:800px){.product-detail-top{grid-template-columns:1fr}.product-detail-media{min-height:300px;border-right:0;border-bottom:1px solid var(--line)}.similar-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Contas: entrega automática */
+.account-art{min-height:230px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,rgba(211,46,255,.28),transparent 55%),linear-gradient(145deg,#18091f,#2a0b31);color:var(--orange)}
+.account-art .icon{width:92px;height:92px;filter:drop-shadow(0 0 22px rgba(211,46,255,.45))}
+.account-card .card-media{padding:0}
+.account-card .product-photo{width:100%;height:100%}
+.account-card .product-photo img{width:100%;height:100%;object-fit:cover}
+.account-card .delivery-badge{background:linear-gradient(90deg,#18a957,#25c86b);color:#07160d}
+.account-delivery{font-weight:800}
+.account-note{margin-top:14px;padding:12px 14px;border:1px solid rgba(37,200,107,.3);background:rgba(37,200,107,.07);border-radius:12px;font-size:12.5px;color:var(--cream-dim)}
+.credentials-box{display:none;margin-top:16px;padding:16px;border:1px solid rgba(37,200,107,.35);background:rgba(37,200,107,.08);border-radius:14px}
+.credentials-box.show{display:block}
+.credentials-box h4{margin:0 0 10px;color:#35d978}
+.credential-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.credential-row:last-child{border-bottom:0}
+.credential-row code{font-family:monospace;color:#fff;word-break:break-all}
+
+@media(max-width:520px){.product-detail-modal{padding:8px}.product-detail-info{padding:30px 18px 22px}.similar-wrap{padding:22px 14px 26px}.similar-grid{grid-template-columns:1fr}.product-detail-media{min-height:240px;padding:18px}}
+
+/* Responsive */
+@media (max-width:1024px){
+  .products,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .categories,.reviews{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr 1fr}
+  .hero{grid-template-columns:1fr}
+  .hero-fruit{font-size:100px}
+  .community{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  nav{display:none}
+  .hamb{display:block}
+  .discord{display:none}
+  .products,.why-grid{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr}
+  .heading.row{flex-direction:column;align-items:flex-start}
+  .mini-stats{gap:22px}
+}
+@media (prefers-reduced-motion:reduce){
+}
+
+
+/* V4 account cards: one dedicated image per product */
+.account-card .card-media{padding:0}
+.account-card .product-photo{width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.account-card .product-photo img{width:100%;height:100%;object-fit:cover;display:block}
+</style>
+<style id="final-card-spacing-stars">
+/* Ajuste fino dos cards: informações mais compactas */
+.card-body{padding-top:14px}
+.card-body small{display:block;margin-bottom:2px}
+.card-body h3{margin:2px 0 3px}
+.card-body p{margin:0;min-height:0;line-height:1.35}
+.rating-box{margin-top:7px;gap:6px}
+.promo-prices{margin:8px 0 2px;gap:7px}
+.current-price-row{margin:0 0 7px;gap:9px}
+
+/* Estrelas com visual um pouco mais suave/arredondado */
+.rating-box .stars{gap:1px}
+.rating-box .stars .star{
+  font-family:"Arial Rounded MT Bold","Trebuchet MS",Arial,sans-serif;
+  font-size:17px;
+  line-height:1;
+  display:inline-block;
+  transform:scaleX(.96);
+  text-shadow:0 0 .15px currentColor;
+}
+.rating-box .stars .star.full{color:#f6c945}
+.rating-box .stars .star.half{background:linear-gradient(90deg,#f6c945 50%,#5d5863 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+</style>
+<style id="faq-pix-style">
+.faq-delivery{margin-top:10px;line-height:1.8}
+.faq-payment{display:flex;align-items:center;gap:10px}
+.faq-pix-badge{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(255,255,255,.14);overflow:hidden}
+.faq-pix-badge img{width:25px;height:25px;object-fit:contain;display:block}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" style="display:none">
+<symbol id="ic-donut" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="var(--pink)" r="9.5"></circle><circle cx="12" cy="12" fill="var(--bg)" r="4"></circle><circle cx="8.2" cy="8.5" fill="var(--cream)" r="1"></circle><circle cx="15.5" cy="7.8" fill="var(--cream)" r="1"></circle><circle cx="17.5" cy="13" fill="var(--cream)" r="1"></circle><circle cx="7" cy="15.5" fill="var(--cream)" r="1"></circle><circle cx="12" cy="18.5" fill="var(--cream)" r="1"></circle></symbol>
+<symbol fill="none" id="ic-cart" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.5 2.5h2l2.6 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 6H5.5"></path></symbol>
+<symbol fill="none" id="ic-search" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" x2="16.2" y1="21" y2="16.2"></line></symbol>
+<symbol fill="none" id="ic-menu" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></symbol>
+<symbol fill="none" id="ic-discord" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1" viewbox="0 0 24 24"><rect height="12" rx="6" width="18" x="3" y="6"></rect><circle cx="9" cy="12" fill="currentColor" r="1.2" stroke="none"></circle><circle cx="15" cy="12" fill="currentColor" r="1.2" stroke="none"></circle></symbol>
+<symbol fill="none" id="ic-fruit" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 21c-4.5 0-7.5-3.5-7.5-7.8 0-3.7 2.7-6.7 6-6.7.6 0 1.2.1 1.5.3.3-.2.9-.3 1.5-.3 3.3 0 6 3 6 6.7C19.5 17.5 16.5 21 12 21z"></path><path d="M12 6.5c0-1.8 1.2-3.2 3-3.7"></path></symbol>
+<symbol fill="none" id="ic-flame" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22c4 0 6.5-2.7 6.5-6.3 0-3-2-4.8-3-6.8-.6 1.3-1.4 2.1-2.3 2.6C13.5 8.4 13.2 5 10.5 2c.3 3-1.2 4.7-2.7 6.5C6.4 10.2 5.5 12 5.5 14.3 5.5 18.6 8 22 12 22z"></path></symbol>
+<symbol fill="none" id="ic-gift" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="12" rx="1.5" width="18" x="3" y="9"></rect><path d="M3 13h18"></path><path d="M12 9v12"></path><path d="M12 9c-1.8 0-4-1-4-3.2S9.5 2.8 12 5c2.5-2.2 4-1.2 4 .8S13.8 9 12 9z"></path></symbol>
+<symbol fill="none" id="ic-lock" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="10" rx="2" width="15" x="4.5" y="10.5"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></symbol>
+<symbol fill="currentColor" id="ic-bolt" viewbox="0 0 24 24"><path d="M13.5 2 4 14h6l-.7 8L20 10h-6.5l0-8z"></path></symbol>
+<symbol fill="none" id="ic-chat" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 5h16v11H8l-4 4V5z"></path></symbol>
+<symbol fill="currentColor" id="ic-heart" viewbox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 7.9 2.4 4.5 6 4.2c2-.2 3.7.9 6 3.5 2.3-2.6 4-3.7 6-3.5 3.6.3 5.6 3.7 4 7.5-2.5 4.7-10 9.3-10 9.3z"></path></symbol>
+<symbol fill="none" id="ic-user" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"></path></symbol>
+<symbol fill="currentColor" id="ic-star" viewbox="0 0 24 24"><path d="M12 2.5l2.9 6.2 6.6.7-5 4.6 1.4 6.6-5.9-3.4-5.9 3.4 1.4-6.6-5-4.6 6.6-.7z"></path></symbol>
+<symbol fill="currentColor" id="ic-spark" viewbox="0 0 24 24"><path d="M12 2c.4 4.6 1.6 6.9 6 8-4.4 1.1-5.6 3.4-6 8-.4-4.6-1.6-6.9-6-8 4.4-1.1 5.6-3.4 6-8z"></path></symbol>
+</svg>
+<header class="top">
+<div class="bar">
+<button aria-expanded="false" aria-label="Abrir menu" class="hamb" id="hamb"><span aria-hidden="true" class="hamb-lines"><span></span><span></span><span></span></span></button>
+<div class="search-wrap">
+<div class="search">
+<span><svg aria-hidden="true" class="icon icon-16"><use href="#ic-search"></use></svg></span>
+<input autocomplete="off" id="search" placeholder="O que você procura?"/>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+<a aria-label="Dough King Store" class="brand" href="#inicio">
+<img alt="Dough King Store" class="brand-logo" src="assets/img_01.webp"/>
+</a>
+<nav>
+<a href="#produtos">Catálogo</a>
+<a href="#faq">FAQ</a>
+<a href="#termos" id="termsLink">Termos</a>
+</nav>
+<button class="discord" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">Entrar</button>
+<button aria-label="Abrir carrinho" class="cart-btn" onclick="toggleCart()"><svg fill="none" height="19" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="19"><circle cx="9" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.5 2.5h2l2.6 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 6H5.5"></path></svg><span id="cartCount">0</span></button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="#inicio">Início</a><a href="#categorias">Categorias</a><a href="#produtos">Produtos</a><a href="#avaliacoes">Avaliações</a><a href="#faq">FAQ</a>
+</div>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-left">
+<div class="online"><i></i> Estamos online</div>
+<h1>A loja de <span>Blox Fruits</span><br/>que você estava procurando.</h1>
+<p>Encontre frutas e produtos para sua aventura com uma experiência simples, rápida e com atendimento pelo Discord.</p>
+<div class="actions">
+<a class="btn primary" href="#produtos">Ver produtos →</a>
+<a class="btn ghost" href="#categorias">Explorar categorias</a>
+</div>
+<div class="mini-stats">
+<div><strong>+1.000</strong><small>Clientes</small></div>
+<div><strong>4.9/5</strong><small>Avaliação</small></div>
+<div><strong>24/7</strong><small>Suporte</small></div>
+</div>
+</div>
+</section>
+<section class="community">
+<div><b>Resultados da comunidade</b><span>Números demonstrativos — troque pelos seus dados quando tiver.</span></div>
+<div><strong>1.000+</strong><small>Vendas</small></div>
+<div><strong>4.9</strong><small>Avaliação média</small></div>
+<div><strong>24/7</strong><small>Suporte</small></div>
+</section>
+<section class="section" id="categorias">
+<div class="heading"><small>EXPLORE A LOJA</small><h2>Categorias populares</h2><p>Escolha uma categoria e encontre o produto que procura.</p></div>
+<div class="categories">
+<a class="category" href="#produtos" onclick="filterProducts('Frutas')"><span><svg aria-hidden="true" class="icon icon-30"><use href="#ic-fruit"></use></svg></span><div><h3>Frutas Blox Fruits</h3><p>Veja as frutas disponíveis.</p></div><b>→</b></a>
+<a class="category" href="#produtos" onclick="filterProducts('Contas')"><span><svg aria-hidden="true" class="icon icon-30"><use href="#ic-user"></use></svg></span><div><h3>Contas</h3><p>Contas com entrega automática.</p></div><b>→</b></a>
+</div>
+</section>
+<section class="section" id="produtos">
+<div class="heading row">
+<div><small>PREMIUM</small><h2>Destaques da loja</h2><p>Produtos selecionados da Dough King Store.</p></div>
+<div class="filters">
+<button class="filter active" onclick="filterProducts('Todos')">Todos</button>
+<button class="filter" onclick="filterProducts('Frutas')">Frutas</button>
+<button class="filter" onclick="filterProducts('Contas')">Contas</button>
+</div>
+</div>
+<div class="products" id="productGrid">
+<article class="card" data-cat="Frutas" data-name="Dough" onclick="openProductDetails('Dough')">
+<div class="card-media">
+<div class="product-art dough product-photo dough-banner"><img alt="Fruta Dough" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" src="assets/img_02.webp"/><svg aria-hidden="true" class="icon icon-52" style="display:none"><use href="#ic-donut"></use></svg></div>
+<div class="tags"><span class="tag">MAIS VENDIDA</span></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Dough</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.5</span><span class="rating-count">(150)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 11,90</span><span class="discount-badge">↘ 42% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 6,90</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Dough')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button>
+</div>
+</article>
+<article class="card" data-cat="Frutas" data-name="Dragon" onclick="openProductDetails('Dragon')">
+<div class="card-media">
+<div class="product-art dragon product-photo"><img alt="Fruta Dragon" src="assets/img_04.webp"/></div>
+<div class="tags"><span class="tag">POPULAR</span></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Dragon</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.6</span><span class="rating-count">(187)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 112,50</span><span class="discount-badge">↘ 29% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 79,50</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Dragon')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button>
+</div>
+</article>
+<article class="card" data-cat="Frutas" data-name="Kitsune" onclick="openProductDetails('Kitsune')">
+<div class="card-media">
+<div class="product-art kitsune product-photo"><img alt="Fruta Kitsune" src="assets/img_05.webp"/></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Kitsune</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.7</span><span class="rating-count">(214)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 32,50</span><span class="discount-badge">↘ 39% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 19,90</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Kitsune')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button>
+</div>
+</article>
+<article class="card" data-cat="Frutas" data-name="Yeti" onclick="openProductDetails('Yeti')">
+<div class="card-media">
+<div class="product-art yeti product-photo"><img alt="Fruta Yeti" src="assets/img_06.webp"/></div>
+<div class="tags"><span class="tag">NOVIDADE</span></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Yeti</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.4</span><span class="rating-count">(163)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 15,50</span><span class="discount-badge">↘ 36% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 9,99</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Yeti')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button>
+</div>
+</article>
+<article class="card" data-cat="Frutas" data-name="Tiger" onclick="openProductDetails('Tiger')">
+<div class="card-media">
+<div class="product-art tiger product-photo"><img alt="Fruta Tiger" src="assets/img_07.webp"/></div>
+<div class="tags"><span class="tag">NOVIDADE</span></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Tiger</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.5</span><span class="rating-count">(198)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 19,90</span><span class="discount-badge">↘ 25% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 14,99</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Tiger')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button>
+</div>
+</article>
+<article class="card" data-cat="Frutas" data-name="Control" onclick="openProductDetails('Control')">
+<div class="card-media">
+<div class="product-art control product-photo"><img alt="Fruta Control" src="assets/img_08.webp"/></div>
+<div class="tags"><span class="tag">POPULAR</span></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Control</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.6</span><span class="rating-count">(176)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 30,50</span><span class="discount-badge">↘ 35% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 19,90</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Control')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button>
+</div>
+</article>
+<article class="card" data-cat="Frutas" data-name="Gás" onclick="openProductDetails('Gás')">
+<div class="card-media">
+<div class="product-art product-photo"><img alt="Fruta Gás" src="assets/img_09.webp"/></div>
+</div>
+<div class="card-body"><small>FRUTA</small><h3>Gás</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.8</span><span class="rating-count">(121)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 12,95</span><span class="discount-badge">↘ 39% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 7,90</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Gás')"><svg aria-hidden="true" class="icon icon-16"><use href="#ic-cart"></use></svg>Comprar agora</button></div>
+</article>
+<article class="card account-card" data-cat="Contas" data-name="God Human + CDK" onclick="openProductDetails('God Human + CDK')">
+<div class="delivery-badge account-delivery"><svg aria-hidden="true" class="icon"><use href="#ic-bolt"></use></svg> Entrega automática</div>
+<div class="card-media"><div class="product-photo"><img alt="Conta God Human + CDK" src="assets/img_10.webp"/></div></div>
+<div class="card-body"><small>CONTA</small><h3>God Human + CDK</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.9</span><span class="rating-count">(avaliações)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 12,99</span><span class="discount-badge">↘ 31% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 8,99</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('God Human + CDK')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button></div>
+</article>
+<article class="card account-card" data-cat="Contas" data-name="God Human + Mítica" onclick="openProductDetails('God Human + Mítica')">
+<div class="delivery-badge account-delivery"><svg aria-hidden="true" class="icon"><use href="#ic-bolt"></use></svg> Entrega automática</div>
+<div class="card-media"><div class="product-photo"><img alt="Conta God Human + Mítica" src="assets/img_11.webp"/></div></div>
+<div class="card-body"><small>CONTA</small><h3>God Human + Mítica</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.8</span><span class="rating-count">(avaliações)</span></div><div class="price-row"><div class="promo-prices"><span class="old-price">R$ 8,90</span><span class="discount-badge">↘ 34% OFF</span></div><div class="current-price-row"><div class="current-price">R$ 5,90</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('God Human + Mítica')"><svg aria-hidden="true" class="icon"><use href="#ic-cart"></use></svg> Comprar agora</button></div>
+</article>
+<article class="card account-card" data-cat="Contas" data-name="Angel V4 full + GH + CDK" onclick="openProductDetails('Angel V4 full + GH + CDK')">
+<div class="delivery-badge"><svg aria-hidden="true" class="icon"><use href="#ic-bolt"></use></svg> Entrega automática</div>
+<div class="card-media"><div class="product-photo"><img alt="Angel V4 full + GH + CDK" src="assets/img_12.webp"/></div></div>
+<div class="card-body"><small>CONTA</small><h3>Angel V4 full + GH + CDK</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.9</span><span class="rating-count">(137)</span></div><div class="price-row"><div class="current-price-row"><div class="current-price">R$ 18,50</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Angel V4 full + GH + CDK')"><svg aria-hidden="true" class="icon icon-16"><use href="#ic-cart"></use></svg>Comprar agora</button></div>
+</article><article class="card account-card" data-cat="Contas" data-name="Shark V4 full + GH + CDK" onclick="openProductDetails('Shark V4 full + GH + CDK')">
+<div class="delivery-badge"><svg aria-hidden="true" class="icon"><use href="#ic-bolt"></use></svg> Entrega automática</div>
+<div class="card-media"><div class="product-photo"><img alt="Shark V4 full + GH + CDK" src="assets/img_13.webp"/></div></div>
+<div class="card-body"><small>CONTA</small><h3>Shark V4 full + GH + CDK</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.8</span><span class="rating-count">(94)</span></div><div class="price-row"><div class="current-price-row"><div class="current-price">R$ 18,50</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Shark V4 full + GH + CDK')"><svg aria-hidden="true" class="icon icon-16"><use href="#ic-cart"></use></svg>Comprar agora</button></div>
+</article><article class="card account-card" data-cat="Contas" data-name="Human V4 full + GH + CDK" onclick="openProductDetails('Human V4 full + GH + CDK')">
+<div class="delivery-badge"><svg aria-hidden="true" class="icon"><use href="#ic-bolt"></use></svg> Entrega automática</div>
+<div class="card-media"><div class="product-photo"><img alt="Human V4 full + GH + CDK" src="assets/img_14.webp"/></div></div>
+<div class="card-body"><small>CONTA</small><h3>Human V4 full + GH + CDK</h3><div class="rating-box"><span class="stars"><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half">★</span></span><span class="rating-number">4.7</span><span class="rating-count">(116)</span></div><div class="price-row"><div class="current-price-row"><div class="current-price">R$ 18,50</div><div aria-label="Pix" class="pix-badge"><img alt="Pix" src="assets/img_03.webp"/></div></div></div><button class="buy-btn" onclick="event.stopPropagation();addToCart('Human V4 full + GH + CDK')"><svg aria-hidden="true" class="icon icon-16"><use href="#ic-cart"></use></svg>Comprar agora</button></div>
+</article></div>
+</section>
+<section class="why">
+<div class="section heading"><small>POR QUE A DOUGH KING?</small><h2>Uma experiência simples para comprar.</h2></div>
+<div class="why-grid">
+<div><span><svg aria-hidden="true" class="icon icon-28"><use href="#ic-bolt"></use></svg></span><h3>Entrega rápida</h3><p>Organize seus pedidos para entregar com agilidade.</p></div>
+<div><span><svg aria-hidden="true" class="icon icon-28"><use href="#ic-lock"></use></svg></span><h3>Compra segura</h3><p>Informações claras e atendimento durante o pedido.</p></div>
+<div><span><svg aria-hidden="true" class="icon icon-28"><use href="#ic-chat"></use></svg></span><h3>Suporte pelo Discord</h3><p>Fale com a equipe quando precisar de ajuda.</p></div>
+<div><span><svg aria-hidden="true" class="icon icon-28"><use href="#ic-heart"></use></svg></span><h3>Foco na comunidade</h3><p>Uma loja feita para jogadores de Blox Fruits.</p></div>
+</div>
+</section>
+<section class="section" id="avaliacoes">
+<div class="heading"><small>AVALIAÇÕES</small><h2>O que nossos clientes dizem</h2><p>Exemplos de avaliações — substitua pelas avaliações reais da sua loja.</p></div>
+<div aria-label="Avaliações de clientes" class="reviews-marquee">
+<div class="reviews-track" id="reviewsTrack"></div>
+</div>
+</section>
+
+<section class="terms" id="termos" aria-hidden="true">
+  <button class="terms-close" id="termsClose" aria-label="Fechar termos">×</button>
+  <div class="terms-head">
+    <h2>Termos e Condições</h2>
+    <p>Leia atentamente as condições antes de finalizar sua compra na Dough King Store.</p>
+  </div>
+  <div class="terms-grid">
+    <article class="terms-card">
+      <h3>1. Produtos e entrega</h3>
+      <p>Todos os produtos vendidos pela Dough King Store são produtos digitais relacionados ao Blox Fruits.</p>
+      <ul>
+        <li><strong>Itens digitais:</strong> entrega imediata após a confirmação do pagamento e conforme a forma de entrega indicada no produto.</li>
+        <li><strong>Contas:</strong> a entrega depende da disponibilidade do estoque e da confirmação do pedido. As informações de acesso serão disponibilizadas conforme o sistema de entrega da loja.</li>
+        <li>Antes de comprar, confira o nome, conteúdo e condições do produto escolhido.</li>
+      </ul>
+    </article>
+
+    <article class="terms-card">
+      <h3>2. Acesso e segurança das contas</h3>
+      <p>Quando uma conta for adquirida, recomendamos alterar imediatamente a senha e atualizar as opções de segurança disponíveis. O cliente é responsável por manter seus dados de acesso protegidos após o recebimento.</p>
+    </article>
+
+    <article class="terms-card">
+      <h3>3. Produtos digitais e propriedade</h3>
+      <p>Os produtos são destinados ao uso conforme sua descrição. A Dough King Store não se responsabiliza por alterações realizadas pelo cliente depois da entrega, incluindo mudanças de senha, dados de segurança ou outras configurações da conta.</p>
+    </article>
+
+    <article class="terms-card terms-warning">
+      <h3>4. Política de reembolso e troca</h3>
+      <p>Por se tratarem de produtos digitais, <strong>não realizamos reembolso ou troca por arrependimento</strong> depois que o produto foi entregue ou liberado.</p>
+      <ul>
+        <li>"Não gostei do produto"</li>
+        <li>"Me arrependi da compra"</li>
+        <li>"Esperava outro item"</li>
+      </ul>
+      <p style="margin-top:12px">Em caso de problema relacionado ao pedido ou ao produto recebido, entre em contato com a equipe para que a situação seja analisada.</p>
+    </article>
+
+    <article class="terms-card">
+      <h3>5. O que a Dough King Store não vende</h3>
+      <p><strong>A Dough King Store não comercializa Robux.</strong> Nossa loja é focada em itens, frutas e contas relacionados ao Blox Fruits.</p>
+    </article>
+
+    <article class="terms-card">
+      <h3>6. Atendimento</h3>
+      <p>Para dúvidas, problemas com pedidos ou suporte, utilize nosso Discord oficial.</p>
+      <div class="terms-discord">
+        <p><strong>Discord oficial da Dough King Store</strong><br>Entre no servidor para falar com a equipe.</p>
+        <a class="btn primary" href="https://discord.gg/zTRyaaeCVp" target="_blank" rel="noopener">Entrar no Discord →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="help" id="faq">
+<div class="section heading"><small>CENTRAL DE AJUDA</small><h2>Perguntas frequentes</h2><p>As principais respostas para facilitar sua compra.</p></div>
+<div class="faq">
+<details><summary>Como faço um pedido? <b>+</b></summary><p>Escolha um produto, confira as informações e siga as instruções de compra da loja.</p></details>
+<details><summary>Qual o prazo de entrega? <b>+</b></summary><p>O prazo depende do produto e da disponibilidade.</p><div class="faq-delivery"><strong>Frutas:</strong> de 12h até 24h depois do pagamento ser aprovado<br><strong>Contas:</strong> entrega imediata após o pagamento ser aprovado</div></details>
+<details><summary>Onde encontro suporte? <b>+</b></summary><p>Entre no Discord da Dough King Store e abra um atendimento no canal indicado.</p></details>
+<details><summary>Quais formas de pagamento vocês aceitam? <b>+</b></summary><div class="faq-payment"><span>Pix</span><span class="faq-pix-badge" aria-label="Pix"><img alt="Pix" src="assets/img_03.webp"></span></div></details>
+</div>
+</section>
+<section class="cta">
+<div><span><svg aria-hidden="true" class="icon icon-44"><use href="#ic-donut"></use></svg></span><div><h2>Entre no nosso Discord!</h2><p>Promoções, novidades e suporte da Dough King Store.</p></div></div>
+<a class="btn primary" href="https://discord.gg/zTRyaaeCVp" target="_blank">Entrar no Discord →</a>
+</section>
+</main>
+<footer>
+<div class="foot-brand"><img alt="Dough King Store" class="footer-logo" src="assets/img_01.webp"/></div>
+<div><h4>Navegação</h4><a href="#inicio">Página inicial</a><a href="#produtos">Produtos</a><a href="#avaliacoes">Avaliações</a></div>
+<div><h4>Ajuda &amp; Suporte</h4><a href="#faq">Dúvidas frequentes</a><a href="https://discord.gg/zTRyaaeCVp" target="_blank">Suporte via Discord</a></div>
+<div><h4>Comunidade</h4><p>Sorteios, cupons &amp; novidades</p><a href="https://discord.gg/zTRyaaeCVp" target="_blank">Entrar no Discord</a></div>
+<div class="legal"><p>© 2026 Dough King Store. Todos os direitos reservados.</p><small>DOUGH KING STORE é uma loja independente e não é afiliada, patrocinada ou endossada pela Roblox Corporation.</small></div>
+</footer>
+<aside class="cart" id="cart">
+<div class="cart-head"><div><small>SEU PEDIDO</small><h2>Seu carrinho</h2></div><button onclick="toggleCart()">×</button></div>
+<div class="cart-items" id="cartItems"></div>
+<div class="cart-empty" id="cartEmpty">Seu carrinho está vazio.<br/><a href="#produtos" onclick="toggleCart()">Escolher produtos →</a></div>
+<div class="cart-bottom">
+<div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+<button class="checkout-btn" onclick="openCheckout()">Continuar para checkout →</button>
+</div>
+</aside>
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="checkout" id="checkout">
+<div class="checkout-box">
+<button class="close-check" onclick="closeCheckout()">×</button>
+<div class="checkout-title"><small>FINALIZAR PEDIDO</small><h2>Checkout</h2><p>Confira seu pedido antes de continuar.</p></div>
+<div id="checkoutSummary"></div>
+<div class="checkout-total"><span>Total</span><strong id="checkoutTotal">R$ 0,00</strong></div>
+<div class="checkout-note"><svg aria-hidden="true" class="icon icon-14"><use href="#ic-lock"></use></svg> O pagamento não é processado neste site. O pedido será encaminhado para o Discord para você continuar com a equipe.</div>
+<button class="checkout-discord" onclick="sendOrderToDiscord()"><svg aria-hidden="true" class="icon icon-16"><use href="#ic-discord"></use></svg> Continuar pelo Discord</button>
+</div>
+</div>
+<div class="product-detail-modal" id="productDetailModal" onclick="if(event.target===this)closeProductDetails()">
+<div aria-labelledby="detailTitle" aria-modal="true" class="product-detail-box" role="dialog">
+<button aria-label="Fechar" class="product-detail-close" onclick="closeProductDetails()">×</button>
+<div class="product-detail-top">
+<div class="product-detail-media" id="detailMedia"></div>
+<div class="product-detail-info">
+<div class="product-detail-kicker" id="detailCategory">FRUTA</div>
+<h2 id="detailTitle">Produto</h2>
+<div class="detail-rating"><span class="detail-stars" id="detailStars">★★★★★</span><span id="detailRatingText">4.5 (150)</span></div>
+<div class="detail-section">
+<h3>O que vem</h3>
+<ul class="detail-list" id="detailIncludes"></ul>
+</div>
+<div class="detail-section">
+<h3>Informações</h3>
+<ul class="detail-list" id="detailInfo"></ul>
+</div>
+<div class="account-note" id="accountNote" style="display:none">⚡ <b>Conta:</b> após o pagamento ser aprovado, o sistema pode liberar automáticamente o usuário e a senha do estoque reservado.</div>
+<div class="credentials-box" id="credentialsBox">
+<h4>🔐 Credenciais liberadas</h4>
+<div class="credential-row"><span>Usuário</span><code id="credentialUser">—</code></div>
+<div class="credential-row"><span>Senha</span><code id="credentialPass">—</code></div>
+</div>
+<div class="detail-price-row"><span class="detail-old-price" id="detailOldPrice"></span><span class="detail-off" id="detailOff"></span></div>
+<div class="detail-price" id="detailPrice">R$ 0,00</div>
+<button class="buy-btn detail-buy" id="detailBuy">Comprar agora</button>
+</div>
+</div>
+<div class="similar-wrap">
+<h3>Produtos similares</h3>
+<div class="similar-grid" id="similarGrid"></div>
+</div>
+</div>
+</div>
+<div class="modal" id="modal">
+<div class="modal-box"><button class="close" onclick="closeBuy()">×</button><div class="modal-icon"><svg aria-hidden="true" class="icon icon-40"><use href="#ic-cart"></use></svg></div><h2 id="buyTitle">Produto</h2><p>Para continuar, entre no Discord e fale com a equipe da Dough King Store.</p><a class="btn primary" href="https://discord.gg/zTRyaaeCVp" target="_blank">Ir para o Discord</a></div>
+</div>
+<script>
+const cards=[...document.querySelectorAll('.card')];
+const filters=[...document.querySelectorAll('.filter')];
+const searchInput=document.getElementById('search');
+const searchResults=document.getElementById('searchResults');
+
+function normalizeSearch(text){
+  return text.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+function getSearchItems(term){
+  const q=normalizeSearch(term.trim());
+  if(!q)return [];
+  return cards.filter(card=>{
+    const name=card.dataset.name||'';
+    const cat=card.dataset.cat||'';
+    return normalizeSearch(name).includes(q)||normalizeSearch(cat).includes(q);
+  });
+}
+function renderSearchResults(term){
+  const q=term.trim();
+  if(!q){searchResults.classList.remove('show');searchResults.innerHTML='';return;}
+  const matches=getSearchItems(q).slice(0,8);
+  if(!matches.length){
+    searchResults.innerHTML='<div class="search-empty">Nenhum produto encontrado.</div>';
+    searchResults.classList.add('show');
+    return;
+  }
+  searchResults.innerHTML=matches.map(card=>{
+    const name=card.dataset.name;
+    const media=card.querySelector('.card-media');
+    const img=media?.querySelector('img');
+    const src=img?.getAttribute('src')||'';
+    const cat=card.dataset.cat==='Contas'?'CONTA':'FRUTAS';
+    return `<div class="search-result" data-search-name="${name.replace(/"/g,'&quot;')}">
+      <div class="search-thumb">${src?`<img src="${src}" alt="${name}">`:''}</div>
+      <div class="search-result-info"><div class="search-result-title">${name}</div><span class="search-result-meta">${cat}</span></div>
+    </div>`;
+  }).join('');
+  searchResults.classList.add('show');
+  searchResults.querySelectorAll('.search-result').forEach(item=>{
+    item.addEventListener('click',()=>{
+      const name=item.dataset.searchName;
+      searchInput.value=name;
+      searchResults.classList.remove('show');
+      openProductDetails(name);
+    });
+  });
+}
+searchInput?.addEventListener('input',()=>renderSearchResults(searchInput.value));
+searchInput?.addEventListener('focus',()=>{if(searchInput.value.trim())renderSearchResults(searchInput.value)});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.search-wrap'))searchResults?.classList.remove('show');
+});
+searchInput?.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){searchResults.classList.remove('show');searchInput.blur();}
+  if(e.key==='Enter'){
+    const first=searchResults?.querySelector('.search-result');
+    if(first)first.click();
+  }
+});
+cards.forEach(c=>{if(c.dataset.cat!=='Contas'){const b=c.querySelector('.delivery-badge');if(b)b.innerHTML='<svg aria-hidden="true" class="icon"><use href="#ic-chat"></use></svg> Entrega combinada pelo Discord';b?.classList.remove('account-delivery')}});
+let cart=JSON.parse(localStorage.getItem('doughKingCart')||'[]');
+
+function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function filterProducts(cat){
+  cards.forEach(c=>c.style.display=(cat==='Todos'||c.dataset.cat===cat)?'block':'none');
+  filters.forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase().includes(cat.toLowerCase())||(cat==='Todos'&&b.textContent==='Todos')));
+}
+
+const priceMap={
+  "Dough":6.90,"Dragon":79.50,"Kitsune":19.90,"Yeti":9.99,"Tiger":14.99,"Control":19.90,"Gás":7.90,"Angel V4 full + GH + CDK":18.50,"Shark V4 full + GH + CDK":18.50,"Human V4 full + GH + CDK":18.50,"God Human + CDK":8.99,"God Human + Mítica":5.90
+};
+function addToCart(name){
+  const item=cart.find(x=>x.name===name);
+  if(item)item.qty++;
+  else cart.push({name,price:priceMap[name]||0,qty:1});
+  saveCart(); renderCart(); openCart();
+}
+function changeQty(name,delta){
+  const item=cart.find(x=>x.name===name);
+  if(!item)return;
+  item.qty+=delta;
+  if(item.qty<=0)cart=cart.filter(x=>x.name!==name);
+  saveCart();renderCart();
+}
+function removeItem(name){cart=cart.filter(x=>x.name!==name);saveCart();renderCart()}
+function saveCart(){localStorage.setItem('doughKingCart',JSON.stringify(cart))}
+function renderCart(){
+  const items=document.getElementById('cartItems'), empty=document.getElementById('cartEmpty');
+  const count=cart.reduce((a,x)=>a+x.qty,0), total=cart.reduce((a,x)=>a+x.price*x.qty,0);
+  document.getElementById('cartCount').textContent=count;
+  document.getElementById('cartTotal').textContent=brl(total);
+  document.getElementById('checkoutTotal').textContent=brl(total);
+  empty.style.display=cart.length?'none':'block';
+  items.innerHTML=cart.map(x=>`
+    <div class="cart-item">
+      <div class="cart-icon"><svg class="icon icon-24" aria-hidden="true"><use href="#ic-donut"></use></svg></div>
+      <div class="cart-info"><b>${x.name}</b><small>${brl(x.price)} cada</small>
+        <div class="qty"><button onclick="changeQty('${x.name}',-1)">−</button><span>${x.qty}</span><button onclick="changeQty('${x.name}',1)">+</button><button class="trash" onclick="removeItem('${x.name}')">Excluir</button></div>
+      </div>
+      <strong>${brl(x.price*x.qty)}</strong>
+    </div>`).join('');
+}
+function openCart(){document.getElementById('cart').classList.add('open');document.getElementById('cartOverlay').classList.add('show')}
+function toggleCart(){document.getElementById('cart').classList.toggle('open');document.getElementById('cartOverlay').classList.toggle('show')}
+function openCheckout(){
+  if(!cart.length){alert('Seu carrinho está vazio.');return}
+  document.getElementById('checkoutSummary').innerHTML=cart.map(x=>`<div class="summary-line"><span>${x.qty}× ${x.name}</span><b>${brl(x.price*x.qty)}</b></div>`).join('');
+  const hasAccount=cart.some(x=>x.name.startsWith('God Human +')||x.name.includes('V4 full + GH + CDK'));
+  const note=document.querySelector('.checkout-note');
+  if(note) note.innerHTML=hasAccount ? '<svg aria-hidden="true" class="icon icon-14"><use href="#ic-lock"></use></svg> Contas: após a aprovação do pagamento, as credenciais devem ser liberadas pelo servidor automaticamente. Itens digitais comuns têm entrega imediata após a confirmação do pagamento. Contas seguem a disponibilidade do estoque e o processo de liberação da loja.' : '<svg aria-hidden="true" class="icon icon-14"><use href="#ic-lock"></use></svg> Itens digitais comuns têm entrega imediata após a confirmação do pagamento. Contas seguem a disponibilidade do estoque e o processo de liberação da loja.';
+  document.getElementById('checkout').classList.add('show');
+}
+function closeCheckout(){document.getElementById('checkout').classList.remove('show')}
+function sendOrderToDiscord(){
+  // Troque este link pelo seu convite do Discord.
+  // Para automação real de pedidos, use um backend/serviço de checkout apropriado.
+  const text=cart.map(x=>`${x.qty}x ${x.name}`).join(', ');
+  window.open('https://discord.gg/zTRyaaeCVp?order='+encodeURIComponent(text), '_blank');
+}
+function openBuy(name){addToCart(name)}
+
+
+const productDetails={
+  Dough:{category:'FRUTA',rating:'4.5 (150)',stars:'★★★★½',old:'R$ 11,90',off:'42% OFF',price:'R$ 6,90',includes:['1x Fruta Dough','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+  Dragon:{category:'FRUTA',rating:'4.6 (187)',stars:'★★★★½',old:'R$ 112,50',off:'29% OFF',price:'R$ 79,50',includes:['1x Fruta Dragon','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+  Kitsune:{category:'FRUTA',rating:'4.7 (214)',stars:'★★★★½',old:'R$ 32,50',off:'39% OFF',price:'R$ 19,90',includes:['1x Fruta Kitsune','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+  Yeti:{category:'FRUTA',rating:'4.4 (163)',stars:'★★★★½',old:'R$ 15,50',off:'36% OFF',price:'R$ 9,99',includes:['1x Fruta Yeti','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+  Tiger:{category:'FRUTA',rating:'4.5 (198)',stars:'★★★★½',old:'R$ 19,90',off:'25% OFF',price:'R$ 14,99',includes:['1x Fruta Tiger','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+  Control:{category:'FRUTA',rating:'4.6 (176)',stars:'★★★★½',old:'R$ 30,50',off:'35% OFF',price:'R$ 19,90',includes:['1x Fruta Control','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+
+  'God Human + CDK':{category:'CONTA',rating:'4.9',stars:'★★★★½',old:'R$ 12,99',off:'31% OFF',price:'R$ 8,99',account:true,includes:['1x Conta God Human + CDK','Usuário e senha liberados automáticamente após aprovação do pagamento'],info:['Entrega automática exclusiva para contas','Conta configurada com God Human + CDK','As credenciais são retiradas do estoque após a confirmação do pagamento']},
+  'God Human + Mítica':{category:'CONTA',rating:'4.8',stars:'★★★★½',old:'R$ 8,90',off:'34% OFF',price:'R$ 5,90',account:true,includes:['1x Conta God Human + Mítica','Usuário e senha liberados automáticamente após aprovação do pagamento'],info:['Entrega automática exclusiva para contas','Conta configurada com God Human + Mítica','As credenciais são retiradas do estoque após a confirmação do pagamento']},
+  'Gás':{category:'FRUTA',rating:'4.8 (121)',stars:'★★★★½',old:'R$ 12,95',off:'39% OFF',price:'R$ 7,90',includes:['1x Fruta Gás','Atendimento depois do pagamento'],info:['Produto digital para Blox Fruits','Confira o pedido antes de finalizar a compra']},
+  'Angel V4 full + GH + CDK':{category:'CONTA',rating:'4.9 (137)',stars:'★★★★½',old:'',off:'',price:'R$ 18,50',account:true,includes:['1x Conta Angel V4 Full + God Human + CDK','Usuário e senha liberados automaticamente após aprovação do pagamento'],info:['Entrega automática exclusiva para contas','Angel V4 Full + God Human + CDK','As credenciais são retiradas do estoque após a confirmação do pagamento']},
+  'Shark V4 full + GH + CDK':{category:'CONTA',rating:'4.8 (94)',stars:'★★★★½',old:'',off:'',price:'R$ 18,50',account:true,includes:['1x Conta Shark V4 Full + God Human + CDK','Usuário e senha liberados automaticamente após aprovação do pagamento'],info:['Entrega automática exclusiva para contas','Shark V4 Full + God Human + CDK','As credenciais são retiradas do estoque após a confirmação do pagamento']},
+  'Human V4 full + GH + CDK':{category:'CONTA',rating:'4.7 (116)',stars:'★★★★½',old:'',off:'',price:'R$ 18,50',account:true,includes:['1x Conta Human V4 Full + God Human + CDK','Usuário e senha liberados automaticamente após aprovação do pagamento'],info:['Entrega automática exclusiva para contas','Human V4 Full + God Human + CDK','As credenciais são retiradas do estoque após a confirmação do pagamento']},
+  Gamepass:{category:'GAMEPASS',rating:'4.6 (92)',stars:'★★★★½',old:'',off:'',price:'R$ 29,90',includes:['1x Gamepass selecionado','Atendimento depois do pagamento'],info:['Produto digital para Roblox','Os detalhes do gamepass podem ser conferidos antes da compra']},
+  'Pack King':{category:'PACOTE',rating:'4.7 (108)',stars:'★★★★½',old:'',off:'',price:'R$ 119,90',includes:['1x Pack King','Conteúdo conforme a descrição do pacote'],info:['Produto digital para Blox Fruits','Confira os itens do pacote antes da compra']}
+};
+function openProductDetails(name){
+  const d=productDetails[name]||productDetails.Dough;
+  const card=document.querySelector(`.card[data-name="${CSS.escape(name)}"]`);
+  const media=card?.querySelector('.card-media');
+  document.getElementById('detailMedia').innerHTML=media?media.innerHTML:'';
+  document.getElementById('detailCategory').textContent=d.category;
+  document.getElementById('detailTitle').textContent=name;
+  const ratingValue=parseFloat(d.rating)||5; const fullStars=Math.floor(ratingValue); const hasHalf=(ratingValue-fullStars)>=0.25 && (ratingValue-fullStars)<0.75; let starHtml='<span class="detail-star">★</span>'.repeat(fullStars); if(hasHalf) starHtml+='<span class="detail-star half">★</span>'; document.getElementById('detailStars').innerHTML=starHtml;
+  document.getElementById('detailRatingText').textContent=d.rating;
+  document.getElementById('detailIncludes').innerHTML=d.includes.map(x=>`<li>${x}</li>`).join('');
+  document.getElementById('detailInfo').innerHTML=d.info.map(x=>`<li>${x}</li>`).join('');
+  document.getElementById('detailOldPrice').textContent=d.old;
+  document.getElementById('detailOff').textContent=d.off;
+  document.getElementById('detailOldPrice').style.display=d.old?'inline':'none';
+  document.getElementById('detailOff').style.display=d.off?'inline-flex':'none';
+  document.getElementById('detailPrice').textContent=d.price;
+  const accountNote=document.getElementById('accountNote');
+  const credentialsBox=document.getElementById('credentialsBox');
+  accountNote.style.display=d.account?'block':'none';
+  credentialsBox.classList.remove('show');
+  document.getElementById('credentialUser').textContent='—';
+  document.getElementById('credentialPass').textContent='—';
+  document.getElementById('detailBuy').textContent=d.account?'Comprar conta':'Comprar agora';
+  document.getElementById('detailBuy').onclick=()=>{closeProductDetails();addToCart(name)};
+  const similar=document.getElementById('similarGrid');
+  const all=[...document.querySelectorAll('#productGrid .card')].filter(c=>c.dataset.name!==name && c.style.display!=='none');
+  const pool=all.length?all:[...document.querySelectorAll('#productGrid .card')].filter(c=>c.dataset.name!==name);
+  similar.innerHTML=pool.slice(0,4).map(c=>c.outerHTML).join('');
+  document.getElementById('productDetailModal').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeProductDetails(){document.getElementById('productDetailModal').classList.remove('show');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProductDetails()});
+
+const reviewPool=[
+  ['Maria Julia','A compra foi super tranquila e o atendimento respondeu rapidinho!'],
+  ['João Paulo','Gostei muito da organização da loja e da rapidez na entrega.'],
+  ['Davi França','Tudo certinho, atendimento rápido e produto entregue sem dor de cabeça.'],
+  ['Lucas Gabriel','Comprei pela primeira vez e fiquei muito satisfeito com o suporte.'],
+  ['Ana Beatriz','Site bonito, compra simples e atendimento muito bom.'],
+  ['Pedro Henrique','O pedido foi bem tranquilo e recebi ajuda quando precisei.'],
+  ['Gabriel Souza','Gostei bastante da experiência. Voltaria a comprar com certeza.'],
+  ['Isabela Martins','Atendimento rápido e tudo explicado direitinho.'],
+  ['Rafael Alves','Compra fácil e suporte muito atencioso.'],
+  ['Julia Vitória','Foi bem rápido e a experiência na loja foi ótima.']
+];
+function renderReviews(){
+  const track=document.getElementById('reviewsTrack');
+  if(!track)return;
+  const shuffled=[...reviewPool].sort(()=>Math.random()-0.5);
+  const items=[...shuffled,...shuffled];
+  track.innerHTML=items.map(([name,text])=>`
+    <article class="review-card">
+      <div class="user"><svg class="icon icon-user" aria-hidden="true"><use href="#ic-user"></use></svg><b>${name}</b><span>★★★★★</span></div>
+      <p>“${text}”</p>
+    </article>`).join('');
+}
+renderReviews();
+
+async function checkAccountDelivery(orderId){
+  // Endpoint seguro do seu backend. Nunca coloque senhas de contas no HTML.
+  const res=await fetch('/api/orders/'+encodeURIComponent(orderId));
+  if(!res.ok) throw new Error('Pedido ainda não aprovado');
+  const data=await res.json();
+  if(data.type!=='account' || data.status!=='approved') throw new Error('Conta ainda não liberada');
+  document.getElementById('credentialUser').textContent=data.username||'—';
+  document.getElementById('credentialPass').textContent=data.password||'—';
+  document.getElementById('credentialsBox').classList.add('show');
+}
+
+function closeBuy(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeBuy()});
+function closeMobileMenu(){
+  const btn=document.getElementById('hamb');
+  const nav=document.getElementById('mobileNav');
+  if(!btn || !nav) return;
+  nav.classList.remove('show');
+  btn.classList.remove('active');
+  btn.setAttribute('aria-expanded','false');
+  btn.setAttribute('aria-label','Abrir menu');
+}
+
+document.getElementById('hamb').onclick=()=>{
+  const btn=document.getElementById('hamb');
+  const nav=document.getElementById('mobileNav');
+  const open=nav.classList.toggle('show');
+  btn.classList.toggle('active',open);
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+};
+
+// Fecha o menu ao clicar em qualquer categoria/opção dele.
+document.querySelectorAll('#mobileNav a').forEach(link=>{
+  link.addEventListener('click',()=>closeMobileMenu());
+});
+renderCart();
+</script>
+<script>
+(() => {
+  const terms = document.getElementById('termos');
+  const termsLink = document.getElementById('termsLink');
+  const termsClose = document.getElementById('termsClose');
+  if (!terms || !termsLink || !termsClose) return;
+
+  function openTerms(e) {
+    if (e) e.preventDefault();
+    terms.classList.add('is-open');
+    terms.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    terms.scrollTop = 0;
+  }
+
+  function closeTerms() {
+    terms.classList.remove('is-open');
+    terms.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+
+  termsLink.addEventListener('click', openTerms);
+  termsClose.addEventListener('click', closeTerms);
+  terms.addEventListener('click', (e) => {
+    if (e.target === terms) closeTerms();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && terms.classList.contains('is-open')) closeTerms();
+  });
+})();
+
+(() => {
+  const header = document.querySelector('header.top');
+  const btn = document.getElementById('hamb');
+  const nav = document.getElementById('mobileNav');
+  if (!header) return;
+
+  let lastScroll = window.scrollY;
+  let ticking = false;
+  const threshold = 5;
+
+  function updateHeader() {
+    const current = window.scrollY;
+    const delta = current - lastScroll;
+
+    // No topo, o header fica sempre disponível.
+    if (current <= 20) {
+      header.classList.remove('header-hidden');
+    }
+    // Descendo: esconde o header e fecha o menu aberto.
+    else if (delta > threshold) {
+      header.classList.add('header-hidden');
+      if (nav && nav.classList.contains('show')) closeMobileMenu();
+    }
+    // Subindo: mostra o header imediatamente e deixa o botão clicável novamente.
+    else if (delta < -threshold) {
+      header.classList.remove('header-hidden');
+    }
+
+    lastScroll = current;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Garante que, ao tocar/clicar no botão depois de voltar para cima,
+  // o header seja mostrado antes de abrir o menu.
+  if (btn) {
+    btn.addEventListener('click', () => {
+      header.classList.remove('header-hidden');
+    }, true);
+  }
+})();
+</script>
+</body>
+</html>
